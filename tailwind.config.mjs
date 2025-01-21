@@ -8,7 +8,8 @@ export default {
 				primary: "var(--color-primary)",
 				"primary-active": "var(--color-primary-active)",
 				gray: "var(--color-gray)",
-				light: "var(--color-light)",
+				light: "var(--color-beige-light)",
+				dark: "var(--color-beige-dark)",
 			},
 			fontFamily: {
 				serif: ["Gelasio Variable", "serif"],
