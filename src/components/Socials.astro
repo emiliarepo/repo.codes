@@ -2,24 +2,34 @@
 import { Linkedin, Github, Mail, Send, FileUser } from "lucide-astro";
 
 const socials = [
-	{ href: "https://github.com/emiliarepo", icon: Github },
-	{ href: "https://linkedin.com/in/emiliarepo", icon: Linkedin },
-	{ href: "mailto:emilia@repo.codes", icon: Mail },
-	{ href: "https://t.me/hairinta", icon: Send },
-	{ href: "cv.pdf", icon: FileUser },
+	{ href: "https://github.com/emiliarepo", icon: Github, name: "GitHub" },
+	{
+		href: "https://linkedin.com/in/emiliarepo",
+		icon: Linkedin,
+		name: "LinkedIn",
+	},
+	{ href: "mailto:emilia@repo.codes", icon: Mail, name: "Email" },
+	{ href: "https://t.me/hairinta", icon: Send, name: "Telegram" },
+	{ href: "cv.pdf", icon: FileUser, name: "Curriculum Vitae" },
 ];
 ---
 
 <div class="flex justify-center space-x-4">
 	{
 		socials.map((social) => (
-			<a href={social.href}>
-				{
-					<social.icon
-						size={28}
-						class="text-primary hover:text-primary-active"
-					/>
-				}
+			<a
+				href={social.href}
+				class="relative group"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<social.icon
+					size={28}
+					class="text-primary hover:text-primary-active transition-colors"
+				/>
+				<div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-max px-2 py-1 text-md text-white bg-primary rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+					{social.name}
+				</div>
 			</a>
 		))
 	}

@@ -11,7 +11,7 @@ const { title, description, image, link } = Astro.props;
 	/>
 	<a
 		href={link}
-		class="text-xl font-semibold mb-2 text-primary hover:text-primary-active"
+		class="text-xl font-semibold mb-2 text-primary hover:text-primary-active transition-colors"
 		>{title}</a
 	>
 	<p class="text-sm" set:html={marked(description)} />
