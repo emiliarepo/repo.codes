@@ -1,0 +1,53 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+import tablebook from "../assets/tablebook.jpeg";
+import procurement from "../assets/procurement.jpeg";
+import dadquiz from "../assets/dadquiz.jpeg";
+import gayy from "../assets/gayy.jpeg";
+import cryptocache from "../assets/cryptocache.jpeg";
+
+const projectData = [
+	{
+		title: "TableBook",
+		description:
+			"Design of WWW Services course project, online meeting minute management system written in Svelte",
+		image: tablebook,
+		link: "https://tablebook.pages.dev",
+	},
+	{
+		title: "Supplier Showdown",
+		description:
+			"Software Project for Sievo, a tool to compare supplier data (news, financials, etc.), written in .NET",
+		image: procurement,
+	},
+	{
+		title: "DAD Quiz",
+		description:
+			"Quiz app built with Flutter for the Device Agnostic Design course",
+		image: dadquiz,
+		link: "https://emiliarepo.github.io/dad-quiz/",
+	},
+	{
+		title: "GAYY Website",
+		description:
+			"Website for the GAYY organization, built with React and Tailwind CSS",
+		image: gayy,
+		link: "https://www.gayy.fi",
+	},
+	{
+		title: "CryptoCache",
+		description:
+			"CTF where people must hack into a purposefully vulnerable website and decrypt coordinates for a geocache",
+		image: cryptocache,
+		link: "https://cryptocache.vercel.app",
+	},
+];
+---
+
+<section>
+	<h2 class="text-3xl font-bold mb-4 text-primary font-display">Experience</h2>
+	<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+		{projectData.map((proj) => <ProjectCard {...proj} />)}
+	</div>
+</section>

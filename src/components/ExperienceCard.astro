@@ -1,0 +1,18 @@
+---
+import { marked } from "marked";
+const { title, institution, year, bullets } = Astro.props;
+---
+
+<div>
+	<h3 class="text-2xl font-semibold">{title}</h3>
+	<p><span class="font-semibold">{institution}</span>, {year}</p>
+	{
+		bullets && (
+			<ul class="list-disc list-outside mt-2 ml-8">
+				{bullets.map((bullet: string) => (
+					<li set:html={marked(bullet)} />
+				))}
+			</ul>
+		)
+	}
+</div>

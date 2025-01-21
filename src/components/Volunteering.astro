@@ -1,0 +1,42 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+
+const volunteeringData = [
+	{
+		title: "Equality Coordinator",
+		institution: "Tietokilta ry -- Espoo, Finland",
+		year: "Jan 2025 — ",
+		bullets: [
+			"Advocating for inclusivity and equity within the guild, implementing initiatives to foster a welcoming community.",
+			"Collaborating with the board and guild members to address concerns and create actionable solutions.",
+		],
+	},
+	{
+		title: "Annual Ball Director & Master of Culture",
+		institution: "Tietokilta ry",
+		year: "Jan 2024 — Dec 2024",
+		bullets: [
+			"Directed the planning and execution of the guild's annual ball, attended by over 200 guests and over 50 volunteers.",
+			"Led a committee of 19 to organize culture-themed events, improving teamwork and event management skills.",
+		],
+	},
+	{
+		title: "Board Member & Head of Student Marketing",
+		institution: "Tietokilta ry",
+		year: "Jan 2023 — Dec 2023",
+		bullets: [
+			"Managed the guild's marketing efforts and led a committee of 29 to promote Aalto through high school visits.",
+			"Contributed to decision making and strategic planning as part of the guild's board.",
+		],
+	},
+];
+---
+
+<section>
+	<h2 class="text-3xl font-bold mb-4 text-primary font-display">
+		Volunteering
+	</h2>
+	<div class="space-y-4">
+		{volunteeringData.map((vol) => <ExperienceCard {...vol} />)}
+	</div>
+</section>

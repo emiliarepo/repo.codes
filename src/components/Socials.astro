@@ -1,0 +1,26 @@
+---
+import { Linkedin, Github, Mail, Send, FileUser } from "lucide-astro";
+
+const socials = [
+	{ href: "https://github.com/emiliarepo", icon: Github },
+	{ href: "https://linkedin.com/in/emiliarepo", icon: Linkedin },
+	{ href: "mailto:emilia@repo.codes", icon: Mail },
+	{ href: "https://t.me/hairinta", icon: Send },
+	{ href: "cv.pdf", icon: FileUser },
+];
+---
+
+<div class="flex justify-center space-x-4">
+	{
+		socials.map((social) => (
+			<a href={social.href}>
+				{
+					<social.icon
+						size={28}
+						class="text-primary hover:text-primary-active"
+					/>
+				}
+			</a>
+		))
+	}
+</div>

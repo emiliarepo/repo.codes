@@ -1,0 +1,32 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+
+const educationData = [
+	{
+		title: "MSc in Computer Science",
+		institution: "Aalto University",
+		year: "2024 — ",
+		bullets: [
+			"**Track:** Secure Systems",
+			"**Coursework:** Design of WWW Services, Supervised Machine Learning",
+		],
+	},
+	{
+		title: "BSc in Computer Science",
+		institution: "Aalto University",
+		year: "2021 — 2024",
+		bullets: [
+			"**Minor:** Industrial Engineering and Management",
+			"**GPA:** 4.4/5.0",
+			"**Coursework:** Web Software Development, Databases, Machine Learning, Computer Networks, Software Project 1-2, Information Security, Human-Computer Interaction",
+		],
+	},
+];
+---
+
+<section>
+	<h2 class="text-3xl font-bold mb-4 text-primary font-display">Education</h2>
+	<div class="space-y-4">
+		{educationData.map((edu) => <ExperienceCard {...edu} />)}
+	</div>
+</section>

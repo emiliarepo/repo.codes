@@ -1,0 +1,33 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+
+const experienceData = [
+	{
+		title: "Software Project Developer",
+		institution: "Sievo",
+		year: "September 2023 — April 2024",
+		bullets: [
+			"Supplier information management system for Sievo as part of the Software Project course",
+			"Frontend (React, JS, Tailwind) and backend (C#, .NET, REST APIs) development",
+			"Agile development with Scrum, CI/CD, and Git",
+		],
+	},
+	{
+		title: "Software Developer Intern",
+		institution: "Yield Systems",
+		year: "June 2021 — September 2022",
+		bullets: [
+			"Mobile camera application development with Kotlin",
+			"API development work, data processing and visualization with Python",
+			"Collecting data on the field and working with clients",
+		],
+	},
+];
+---
+
+<section>
+	<h2 class="text-3xl font-bold mb-4 text-primary font-display">Experience</h2>
+	<div class="space-y-4">
+		{experienceData.map((exp) => <ExperienceCard {...exp} />)}
+	</div>
+</section>
