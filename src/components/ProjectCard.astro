@@ -1,21 +1,29 @@
 ---
 import { marked } from "marked";
+import { Picture } from "astro:assets";
 const { title, description, image, link } = Astro.props;
 ---
 
 <div class="bg-light p-4 rounded-lg shadow-md border border-primary">
-	<img
-		src={image.src}
+	<Picture
+		src={image}
+		formats={["webp", "jpeg"]}
 		alt={title}
 		class="w-full h-40 object-cover object-top rounded-md mb-2"
 	/>
-	<a
-		href={link}
-		target="_blank"
-		rel="noopener noreferrer"
-		class="text-xl font-semibold mb-2 text-primary hover:text-primary-active transition-colors"
-	>
-		{title}
-	</a>
+	{
+		link ? (
+			<a
+				href={link}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-xl font-semibold mb-2 text-primary hover:text-primary-active transition-colors"
+			>
+				{title}
+			</a>
+		) : (
+			<h3 class="text-xl font-semibold mb-2 text-primary">{title}</h3>
+		)
+	}
 	<p class="text-sm" set:html={marked(description)} />
 </div>
