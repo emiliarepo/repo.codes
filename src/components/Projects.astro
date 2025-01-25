@@ -6,41 +6,57 @@ import procurement from "../assets/procurement.jpeg";
 import dadquiz from "../assets/dadquiz.jpeg";
 import gayy from "../assets/gayy.jpeg";
 import cryptocache from "../assets/cryptocache.jpeg";
+import repocodes from "../assets/repocodes.jpeg";
 
 const projectData = [
 	{
 		title: "TableBook",
 		description:
-			"Design of WWW Services course project, online meeting minute management system written in Svelte",
+			"Design of WWW Services course group project, online meeting minute management system",
 		image: tablebook,
 		link: "https://tablebook.pages.dev",
+		tools: ["Svelte", "SvelteKit", "Drizzle", "TipTap"],
 	},
 	{
 		title: "Supplier Showdown",
 		description:
-			"Software Project for Sievo, a tool to compare supplier data (news, financials, etc.), written in .NET",
+			"Software Project for Sievo, a tool to compare supplier news, financials and stock prices",
 		image: procurement,
+		tools: ["C#", "ASP.NET", "Swagger", "REST", "CI/CD"],
 	},
 	{
 		title: "DAD Quiz",
-		description:
-			"Quiz app built with Flutter for the Device Agnostic Design course",
+		description: "Quiz app for the Device Agnostic Design course",
 		image: dadquiz,
 		link: "https://emiliarepo.github.io/dad-quiz/",
+		tools: ["Flutter", "Dart", "Riverpod"],
+		source: "https://github.com/emiliarepo/dad-quiz-app",
 	},
 	{
 		title: "GAYY Website",
-		description:
-			"Website for the GAYY organization, built with React and Tailwind CSS",
+		description: "Website for the GAYY organization at Aalto University",
 		image: gayy,
 		link: "https://www.gayy.fi",
+		tools: ["TypeScript", "React", "Tailwind", "i18next"],
+		source: "https://github.com/emiliarepo/gayy-web",
 	},
 	{
 		title: "CryptoCache",
 		description:
-			"CTF where people must hack into a purposefully vulnerable website and decrypt coordinates for a geocache",
+			"CTF challenging participants to exploit a vulnerable website and decrypt coordinates to locate a geocache",
 		image: cryptocache,
 		link: "https://cryptocache.vercel.app",
+		tools: ["Next.js", "React", "Tailwind", "Postgres"],
+		source: "https://github.com/emiliarepo/cryptocache",
+	},
+	{
+		title: "repo.codes",
+		description:
+			"Static portfolio website with professional experience, projects and links",
+		image: repocodes,
+		link: "https://repo.codes",
+		tools: ["Astro", "TypeScript", "Tailwind"],
+		source: "https://github.com/emiliarepo/repo.codes",
 	},
 ];
 ---

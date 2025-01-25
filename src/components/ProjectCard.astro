@@ -1,7 +1,8 @@
 ---
 import { marked } from "marked";
 import { Picture } from "astro:assets";
-const { title, description, image, link } = Astro.props;
+const { title, description, image, link, tools, source } = Astro.props;
+import { FolderGit2, ExternalLink } from "lucide-astro";
 ---
 
 <div class="bg-light p-4 rounded-lg shadow-md border border-primary">
@@ -11,19 +12,40 @@ const { title, description, image, link } = Astro.props;
 		alt={title}
 		class="w-full h-40 object-cover object-top rounded-md mb-2"
 	/>
-	{
-		link ? (
-			<a
-				href={link}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="text-xl font-semibold mb-2 text-primary hover:text-primary-active transition-colors"
-			>
-				{title}
-			</a>
-		) : (
-			<h3 class="text-xl font-semibold mb-2 text-primary">{title}</h3>
-		)
-	}
+	<div class="flex items-center gap-2">
+		<span class="text-xl font-semibold text-primary">{title}</span>
+		{
+			link && (
+				<a
+					href={link}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-gray hover:text-primary-active transition-colors"
+				>
+					<ExternalLink size={20} />
+				</a>
+			)
+		}
+		{
+			source && (
+				<a href={source} target="_blank" rel="noopener noreferrer">
+					<FolderGit2
+						class="text-gray hover:text-primary-active transition-colors"
+						size={20}
+					/>
+				</a>
+			)
+		}
+	</div>
+
 	<p class="text-sm" set:html={marked(description)} />
+	<div class="flex flex-wrap gap-2 mt-3">
+		{
+			tools?.map((tool: string) => (
+				<span class="bg-dark text-gray px-3 py-1 rounded-full font-semibold text-sm">
+					{tool}
+				</span>
+			))
+		}
+	</div>
 </div>
